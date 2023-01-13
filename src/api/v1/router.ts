@@ -8,8 +8,9 @@ export const router = new Router({ prefix: '/v1' });
 const checkApiKeyGeneral = checkApiKey('general');
 const checkApiKeyAuxiliary = checkApiKey('auxiliary');
 
-// number
+// todo: add validation
+// numbers endpoints
 router.get('/random-number', checkApiKeyGeneral, getRandomNumber);
 
-// health check
+// health check endpoints
 router.get('/health-check/liveness', checkApiKeyAuxiliary, healthChecker);

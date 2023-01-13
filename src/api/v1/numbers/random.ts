@@ -11,8 +11,6 @@ export async function getRandomNumber(ctx, next) {
   const max: number = ctx.request.query.max ?? DEFAULT_MAX;
   const min: number = ctx.request.query.min ?? DEFAULT_MIN;
 
-  console.log(max, min, ctx.request.query, Math.random() * (max - min) + min)
-
   ctx.body = {
     body: Math.random() * (max - min) + min,
     code: 'OK',
