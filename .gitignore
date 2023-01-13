@@ -1,0 +1,7 @@
+.env
+.idea
+.vscode
+coverage
+dist
+liquibase.properties
+node_modules

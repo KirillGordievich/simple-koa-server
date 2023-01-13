@@ -1,0 +1,7 @@
+{
+  "extension": "ts",
+  "require": "tsx",
+  "recursive": true,
+  "diff": true,
+  "colors": true
+}

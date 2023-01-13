@@ -1,0 +1,44 @@
+{
+  "$id": "config-api.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "api": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "string",
+          "format": "hostname"
+        },
+        "port": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "keys": {
+          "type": "object",
+          "properties": {
+            "estimate": {
+              "type": "string",
+              "minLength": 1
+            },
+            "exchange": {
+              "type": "string",
+              "minLength": 1
+            },
+            "settings": {
+              "type": "string",
+              "minLength": 1
+            },
+            "balance": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": ["general", "auxiliary"]
+        }
+      },
+      "required": ["host", "port", "keys"]
+    }
+  },
+  "required": ["api"]
+}

@@ -1,0 +1,65 @@
+{
+  "name": "simple-server",
+  "version": "1.0.0",
+  "description": "Simple example of http server built with Typescript and Koa",
+  "private": true,
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:KirillGordievich/simple-koa-server.git"
+  },
+  "author": "Kirill Gordievich <kirill.gordievich777@gmail.com> (https://github.com/kirillgordievich)",
+  "engines": {
+    "node": "^16"
+  },
+  "scripts": {
+    "build": "esbuild ./src/apps/* --bundle --minify --platform=node --format=cjs --target=node16 --outdir=./dist --external:./node_modules/*",
+    "cov": "c8 mocha",
+    "dev:api": "nodemon src/apps/api.ts",
+    "format": "prettier --write .",
+    "lint": "eslint --fix .",
+    "test": "mocha",
+    "types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "ajv": "^8.11.0",
+    "ajv-formats": "^2.1.1",
+    "axios": "^0.27.2",
+    "decimal.js": "^10.3.1",
+    "knex": "^2.3.0",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^12.0.0",
+    "log4js": "^6.5.2",
+    "pg": "^8.7.3",
+    "text-table": "^0.2.0",
+    "verror": "^1.10.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.4.0",
+    "@types/chai": "^4.3.1",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.7",
+    "@types/koa-router": "^7.4.4",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^16.11.38",
+    "@types/pg": "^8.6.5",
+    "@types/text-table": "^0.2.2",
+    "@types/verror": "^1.10.5",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "c8": "^7.12.0",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.1",
+    "esbuild": "^0.16.2",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "mocha": "^10.1.0",
+    "nock": "^13.2.9",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2",
+    "tsx": "^3.8.2",
+    "type-fest": "^3.1.0",
+    "typescript": "^4.7.2"
+  }
+}

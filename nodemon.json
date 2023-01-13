@@ -1,0 +1,10 @@
+{
+  "restartable": "rs",
+  "watch": ["src/"],
+  "execMap": {
+    "ts": "node --loader tsx -r dotenv/config"
+  },
+  "ext": "js,json,ts",
+  "verbose": true,
+  "signal": "SIGINT"
+}
