@@ -7,7 +7,7 @@ const DEFAULT_MIN = -100;
  * @param next - Next handler
  * @returns - Promise from the next handler
  */
-export async function getRandomNumber(ctx, next) {
+export async function randomNumber(ctx, next) {
   const max: number = ctx.request.query.max ?? DEFAULT_MAX;
   const min: number = ctx.request.query.min ?? DEFAULT_MIN;
 
@@ -20,4 +20,4 @@ export async function getRandomNumber(ctx, next) {
   return next();
 }
 
-export default { getRandomNumber };
+export default { randomNumber };
