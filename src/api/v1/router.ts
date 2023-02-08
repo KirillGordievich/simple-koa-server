@@ -9,7 +9,6 @@ export const router = new Router({ prefix: '/v1' });
 const checkApiKeyGeneral = checkApiKey('general');
 const checkApiKeyAuxiliary = checkApiKey('auxiliary');
 
-// todo: add validation
 // numbers endpoints
 router.get('/numbers/random', checkApiKeyGeneral, randomNumber);
 router.get('/numbers/add', checkApiKeyGeneral, addNumbers);
