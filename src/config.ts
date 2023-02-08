@@ -2,10 +2,7 @@ export type Config = {
   api: {
     host: string;
     port: number;
-    keys: {
-      public: string;
-      private: string;
-    };
+    key: string;
   };
 };
 
@@ -50,9 +47,6 @@ export const config = parse({
     // required
     host: process.env.HOST,
     port: process.env.PORT,
-    keys: {
-      general: process.env.API_KEY_GENERAL,
-      auxiliary: process.env.API_KEY_AUXILIARY,
-    },
+    key: process.env.API_KEY,
   },
 }) as Config;

@@ -6,12 +6,9 @@ import { healthChecker } from './health-checker/live';
 
 export const router = new Router({ prefix: '/v1' });
 
-const checkApiKeyGeneral = checkApiKey('general');
-const checkApiKeyAuxiliary = checkApiKey('auxiliary');
-
-// numbers endpoints
-router.get('/numbers/random', checkApiKeyGeneral, randomNumber);
-router.get('/numbers/add', checkApiKeyGeneral, addNumbers);
+// general endpoints
+router.get('/number/random', checkApiKey, randomNumber);
+router.get('/number/add', checkApiKey, addNumbers);
 
 // health check endpoints
-router.get('/health-check/liveness', checkApiKeyAuxiliary, healthChecker);
+router.get('/health-check/liveness', checkApiKey, healthChecker);

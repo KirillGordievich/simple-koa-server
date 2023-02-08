@@ -1,19 +1,16 @@
 import { Context, Next } from 'koa';
+import { UNAUTHORIZED } from './codes';
 
 /**
- * Produce a key checking middleware
+ * Key checking middleware
  *
- * @param type Key type
- * @returns Key checking middleware
+ * @param ctx Koa context
+ * @param next Next handler
  */
-export function checkApiKey(type: 'general' | 'auxiliary') {
-  return async function (ctx: Context, next: Next) {
-    const keys = ctx.decor.keys as Record<string, string>;
+export async function checkApiKey(ctx: Context, next: Next) {
+  if (ctx.headers['x-api-key'] !== ctx.decor.apiKey) {
+    ctx.throw(401, { code: UNAUTHORIZED, message: 'API key is invalid' });
+  }
 
-    if (ctx.headers['x-api-key'] !== keys[type]) {
-      ctx.throw(401, 'api key mismatch');
-    }
-
-    return next();
-  };
+  return next();
 }

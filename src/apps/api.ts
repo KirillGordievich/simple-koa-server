@@ -53,8 +53,8 @@ async function main() {
   log.info('config validation passed');
 
   // create API and start
-  const { keys } = config.api;
-  const api = createServer({ log, keys });
+  const { key } = config.api;
+  const api = createServer({ log, apiKey: key });
   const { host, port } = config.api;
   server = api.listen(port, host);
 
